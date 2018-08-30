@@ -4,7 +4,7 @@
  * Laden und Speichern persistenter Objekte: "ARB", "BUD", "ANW", usw.
  * Berechnen von Properties nach dem Laden.
  */
-include "conf/local.conf.php";
+include "conf/" . VHOST_DOMAIN . ".conf.php";
 
 class Persistence extends ObjectAbstract {
 
