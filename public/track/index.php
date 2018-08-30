@@ -1,5 +1,16 @@
 <?php
 
+$vhost = $_SERVER['HTTP_HOST'];
+$vhost = strpos($vhost, ":") === false ? $vhost : substr($vhost, 0, strpos($vhost, ":"));
+define('VHOST_DOMAIN', $vhost);
+
+$confFile = "conf/" . VHOST_DOMAIN . ".conf.php";
+if(!file_exists($confFile)) {
+    echo "Es ist keine conf Datei vorhanden: $confFile";
+    die;
+}
+
+
 define('PHP_DIR', 'php');
 //error_reporting(E_ALL);
 error_reporting(E_ALL | E_STRICT);
